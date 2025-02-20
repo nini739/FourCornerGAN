@@ -183,9 +183,9 @@ class FourCornerGANModel(BaseModel):
         self.loss_cycle_B = self.criterionCycle(self.rec_B, self.real_B) * lambda_B
 
         self.loss_G_label_A = self.criterionLabel(fake_B_label.view(fake_B_label.size(0), -1)[:, :50],
-                                                  self.real_B_label) * lambda_A
+                                                  self.real_A_label) * lambda_A
         self.loss_G_label_B = self.criterionLabel(fake_A_label.view(fake_A_label.size(0), -1)[:, :50],
-                                                  self.real_A_label) * lambda_B
+                                                  self.real_B_label) * lambda_B
 
 
 
